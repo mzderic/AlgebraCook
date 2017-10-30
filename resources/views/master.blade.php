@@ -30,7 +30,7 @@
             <div class="navbar-header">
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/recipes') }}">
                     AlgebraCook
                 </a>
             </div>
