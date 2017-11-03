@@ -1,6 +1,6 @@
 @if (count($errors) > 0)
 	<div class="alert alert-danger">
-	<strong>Uuuuupss, nešto je pošlo krivo!>/strong>
+	<strong>Uuuuupss, nešto je pošlo krivo!</strong>
 	<br><br>
 	<ul>
 		@foreach ($errors->all() as $error)
