@@ -92,9 +92,28 @@ class RecipesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        return "Spremanje promjena recepta ID: " . $id;
+        $data = $request->all();
+		$recipe = Recipe::find($data['id']);
+		
+		foreach ($recipe->ingredients as $ingredient)
+			$ingredient->delete();
+			
+		$recipe->name = $data['name'];
+		$recipe->description = $data['opis'];
+		
+		if ($recipe->save() ) {
+			
+			foreach ( $data['ingredient'] as $key => $value ) {
+				
+				$sastojak = new Ingredient;
+				$sastojak->name = $value;
+				$sastojak->recipe_id = $recipe->id;
+				$sastojak->save();
+			}
+		}
+		return redirect()->action('RecipesController@index');
     }
 
     /**
