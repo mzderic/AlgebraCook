@@ -20,7 +20,7 @@ class CreateIngredientsTable extends Migration
 			
 			$table
 				->foreign('recipe_id')
-				->refernces('id')->on('recipes')
+				->references('id')->on('recipes')
 				->onDelete('cascade');
         });
     }
