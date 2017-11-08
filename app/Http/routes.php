@@ -11,18 +11,22 @@
 |
 */
 
-// Authentication routes
-Route::get('/login', 'Auth\AuthController@getLogin');
-Route::post('/login', 'Auth\AuthController@postLogin');
-Route::get('/logout', 'Auth\AuthController@getLogout');
+// Authentication routes - rute koje su potrebne za autentikaciju
+Route::get('/auth/login', 'Auth\AuthController@getLogin');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
-// Registration routes
-Route::get('/register', 'Auth\AuthController@getRegister');
-Route::post('/register', 'Auth\AuthController@postRegister');
+// Registration routes - rute potrebne za registraciju
+Route::get('/auth/register', 'Auth\AuthController@getRegister');
+Route::post('/auth/register', 'Auth\AuthController@postRegister');
 
 
 
 Route::get('/', function () {
+    return redirect('/recipes');
+});
+
+Route::get('/home', function () {
     return redirect('/recipes');
 });
 

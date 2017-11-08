@@ -35,6 +35,30 @@
                 </a>
             </div>
 
+			<div class="collapse navbar-collapse" id="app-navbar-collapse">
+				<ul class="nav navbar-nav">
+				<li><a href="{{ url('/recipes') }}">Recepti</a></li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					@if (Auth::guest())
+						<li><a href="{{ url('auth/login') }}">Prijava</a></li>
+						<li><a href="{{ url('auth/register') }}">Registracija</a></li>
+					@else
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							{{ Auth::user()->name }} <span class="caret"><span>
+							</a>
+							
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/auth/profil') }}"><i class="fa fa-btn fa-cog"></i>Profil</a></li>
+								<li><a href="{{ url('/auth/logout') }}"><i class="fa fa-btn fa-cog"></i>Odjava</a></li>
+							</ul>
+						</li>
+					@endif
+				</ul>
+			</div>
+			
         </div>
     </nav>
 	<!--mjesto za prikaz grešaka -->
