@@ -43,4 +43,4 @@ Route::post('/recipes/edit', 'RecipesController@update'); // ažuriranje podatak
 
 Route::get('/recipes/del/{id}', 'RecipesController@delete'); //brisanje recepta
 
-
+Route::get('/recipes/ingredient', 'RecipesController@ingredient');

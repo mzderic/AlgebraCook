@@ -137,4 +137,10 @@ class RecipesController extends Controller
 		Recipe::find($id)->delete();
         return redirect()->action('RecipesController@index');
     }
+	
+	public function ingredient()
+	{
+		return view('ingredient', array('ingredients' => Ingredient::get() ));
+	}
+	
 }
