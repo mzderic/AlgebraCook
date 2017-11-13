@@ -20,6 +20,9 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 Route::get('/auth/register', 'Auth\AuthController@getRegister');
 Route::post('/auth/register', 'Auth\AuthController@postRegister');
 
+Route::get('/profile', 'UserController@profile');
+Route::post('/profile', 'UserController@profile');
+
 Route::get('/hello', 'TestController@hello');
 
 
@@ -30,6 +33,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return redirect('/recipes');
 });
+
+Route::get('/sastojci', 'RecipesController@viewSastojci');
 
 Route::get('/recipes', 'RecipesController@index'); //prikaz scih recepata(popis)
 
@@ -44,3 +49,6 @@ Route::post('/recipes/edit', 'RecipesController@update'); // ažuriranje podatak
 Route::get('/recipes/del/{id}', 'RecipesController@delete'); //brisanje recepta
 
 Route::get('/recipes/ingredient', 'RecipesController@ingredient');
+
+
+

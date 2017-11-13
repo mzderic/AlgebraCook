@@ -91,6 +91,12 @@ class RecipesController extends Controller
 		
         return view('edit')->with('recipe', Recipe::find($id));// Prikaz web obrasca
     }
+	
+	public function viewSastojci(){
+		
+		return view("sastojci", array("ingredients" => Ingredient::get(),
+									"recipes" => Recipe::get() ));
+	}
 
     /**
      * Update the specified resource in storage.
