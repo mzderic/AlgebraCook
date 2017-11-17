@@ -10,9 +10,9 @@ use App\Http\Controllers\Controller;
 class TestController extends Controller
 {
     
-    public function hello()
+    public function zadnje()
     {
-        return view("test");
+        return "zadnje predavanje";
     }
 }
 
