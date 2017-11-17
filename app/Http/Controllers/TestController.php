@@ -12,7 +12,7 @@ class TestController extends Controller
     
     public function zadnje()
     {
-        return "zadnje predavanje";
+        return view('zadnje', ['varijabla' =>'prva varijabla']);
     }
 }
 
